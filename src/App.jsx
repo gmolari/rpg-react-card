@@ -1,5 +1,5 @@
 import "./App.sass";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { UserProvider } from "./context/Context";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
@@ -10,7 +10,6 @@ function App() {
 
   return (
     <main id="main">
-      <Router>
         <UserProvider>
           <Header/>
           <Routes>
@@ -23,7 +22,6 @@ function App() {
           </Routes>
           <Footer/>
         </UserProvider>
-      </Router>
     </main>
   );
 }
