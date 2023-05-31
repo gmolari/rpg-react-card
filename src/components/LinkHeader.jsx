@@ -11,6 +11,11 @@ export default function LinkHeader({name}){
         if (name == aLocation) 
             setActive(false)
         else setActive(true)
+        document.title = capitalize(aLocation)
+        function capitalize(text){
+            let newText = text.charAt(0).toUpperCase() + text.slice(1)
+            return newText
+        }
     }, [location])
 
     return (
