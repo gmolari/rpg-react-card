@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Characters from "./pages/Characters";
+import Error from "./pages/Error";
 
 function App() {
 
@@ -14,10 +15,13 @@ function App() {
           <Header/>
           <Routes>
             <Route
-              exact path="/" element={<Home/>}
+              exact path="/home" element={<Home/>}
             />
             <Route
               path="/characters" element={<Characters/>}
+            />
+            <Route
+              path="*" element={<Error/>}
             />
           </Routes>
           <Footer/>

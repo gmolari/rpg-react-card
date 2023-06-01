@@ -25,11 +25,6 @@ header
         width: 70%
         justify-self: end
 
-@keyframes ascend-line
-  0%
-    width: 0
-  100%
-    width: 100%
 
 nav 
     ul 
@@ -38,23 +33,3 @@ nav
         align-items: center
         gap: .5rem
         padding: 0 4rem
-        .div-link
-            .line-link
-                background: $hover-color-line
-                height: .5rem
-                animation: .5s ease ascend-line
-            .link
-                text-decoration: none
-                color: black
-                // min-width: 200px
-                height: 60px
-                color: $text
-                text-transform: uppercase
-                font-size: 1.5rem
-                display: flex
-                align-items: center
-                padding: 0 4rem 0 .5rem
-                &:hover
-                    background: $hover-color
-                    color: $hover-text
-                

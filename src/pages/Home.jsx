@@ -3,7 +3,6 @@ import { Context } from "../context/Context";
 import "./home.sass"
 
 export default function Home(){
-    const {alo} = useContext(Context);
 
     return (
         <section className="section-home">

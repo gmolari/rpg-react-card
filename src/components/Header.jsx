@@ -15,7 +15,7 @@ export default function Header(){
         <nav className="nav-header">
             <ul>
                 <LinkHeader name={"home"}/>
-                <LinkHeader name={"character"}/>
+                <LinkHeader name={"characters"}/>
             </ul>
         </nav>
     </header>
