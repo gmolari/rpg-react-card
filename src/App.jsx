@@ -14,17 +14,19 @@ function App() {
     <main id="main">
         <UserProvider>
           <Header/>
-          <Routes>
-            <Route
-              exact path="/home" element={<Home/>}
-            />
-            <Route
-              path="/characters/*" element={<Characters/>}
-            />
-            <Route
-              path="*" element={<Error/>}
-            />
-          </Routes>
+            <section className="main-section">
+              <Routes>
+                <Route
+                  exact path="/home" element={<Home/>}
+                />
+                <Route
+                  path="/characters/*" element={<Characters/>}
+                />
+                <Route
+                  path="*" element={<Error/>}
+                />
+              </Routes>
+            </section>
           <Footer/>
         </UserProvider>
     </main>

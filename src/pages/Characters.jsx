@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import '../styles/characters.sass'
 import { Context } from '../context/Context'
 import CardRace from '../components/CardRace'
-import { ButtonNext, ButtonPrev } from '../components/ButtonNext'
+import { ButtonNext, ButtonPrev } from '../components/Buttons'
 
 
 export default function Characters(){
@@ -23,9 +23,11 @@ export default function Characters(){
 
     return (
         <section className='section-characters'>
-            {charRoutes[count]}
-            <ButtonNext route={[count, setCount]} />
-            <ButtonPrev route={[count, setCount]} />
+            <div className="div-container">
+                {charRoutes[count]}
+                <ButtonNext newClass={"right"} route={[count, setCount]} />
+                <ButtonPrev newClass={"left"} route={[count, setCount]} />
+            </div>
         </section>
     )
 }
