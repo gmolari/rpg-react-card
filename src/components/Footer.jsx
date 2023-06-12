@@ -1,4 +1,4 @@
-import "./footer.sass"
+import "../styles/footer.sass"
 
 export default function Footer(){
     return <footer className="div-footer">

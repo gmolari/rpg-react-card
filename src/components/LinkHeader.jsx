@@ -1,21 +1,19 @@
-import "./link.sass"
-import { Link, useLocation } from "react-router-dom"
-import { useState, useEffect } from "react"
+import "../styles/link.sass"
+import { Link } from "react-router-dom"
+import { useContext, useEffect, useState } from "react"
+import { Context } from "../context/Context"
 
 
 export default function LinkHeader({name}){
-    const location = useLocation()
-    const [active, setActive] = useState(true);
+    const [active, setActive] = useState(true)
+    const {location} = useContext(Context)
+
     useEffect(() => {
+        console.log(location)
         let aLocation = location.pathname.substring(1, location.length)
         if (name == aLocation) 
             setActive(false)
         else setActive(true)
-        document.title = capitalize(aLocation)
-        function capitalize(text){
-            let newText = text.charAt(0).toUpperCase() + text.slice(1)
-            return newText
-        }
     }, [location])
 
     return (

@@ -8,6 +8,7 @@ import Characters from "./pages/Characters";
 import Error from "./pages/Error";
 
 function App() {
+  
 
   return (
     <main id="main">

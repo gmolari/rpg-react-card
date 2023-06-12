@@ -1,6 +1,4 @@
-import { useContext } from "react"
-import { Context } from "../context/Context";
-import "./home.sass"
+import "../styles/home.sass"
 
 export default function Home(){
 
