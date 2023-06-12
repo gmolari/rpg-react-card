@@ -19,7 +19,7 @@ function App() {
               exact path="/home" element={<Home/>}
             />
             <Route
-              path="/characters" element={<Characters/>}
+              path="/characters/*" element={<Characters/>}
             />
             <Route
               path="*" element={<Error/>}

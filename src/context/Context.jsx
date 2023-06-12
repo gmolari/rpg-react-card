@@ -1,11 +1,18 @@
 import { createContext, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { api } from "../util/api";
 
 const Context = createContext()
 
 function UserProvider({children}){
     const location = useLocation()
     const navigate = useNavigate()
+    const [races, setRaces] = useState()
+
+    async function handleApi(setter){
+        let value = await api.get('races')
+        setter(value.data)
+    }
 
     useEffect(() => {
         if (location.pathname ==  "/") navigate('/home')
@@ -17,12 +24,17 @@ function UserProvider({children}){
         }
     }, [location])
 
+    useEffect(() => {
+        handleApi(setRaces)
+    }, [])
+
     return (
         <Context.Provider 
         value={
             {
                 location,
-                navigate
+                navigate,
+                races
             }
         }>
             {children}

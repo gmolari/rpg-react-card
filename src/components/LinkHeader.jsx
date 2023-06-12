@@ -9,7 +9,6 @@ export default function LinkHeader({name}){
     const {location} = useContext(Context)
 
     useEffect(() => {
-        console.log(location)
         let aLocation = location.pathname.substring(1, location.length)
         if (name == aLocation) 
             setActive(false)
