@@ -24,9 +24,11 @@ export default function Characters(){
     return (
         <section className='section-characters'>
             <div className="div-container">
-                {charRoutes[count]}
-                <ButtonNext newClass={"right"} route={[count, setCount]} />
-                <ButtonPrev newClass={"left"} route={[count, setCount]} />
+                <div className="div-container-flex">
+                    {charRoutes[count]}
+                </div>
+                <ButtonNext newClassD={"right-d"} newClass={"right"} route={[count, setCount]} />
+                <ButtonPrev newClassD={'left-d'} newClass={"left"} route={[count, setCount]} />
             </div>
         </section>
     )

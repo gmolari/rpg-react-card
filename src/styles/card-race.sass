@@ -1,9 +1,40 @@
+@import "../util/base-variables"
+    
 .div-card-race
-    margin: auto
-    display: flex
-    background: #414141
+    margin: 1rem
+    display: grid
+    grid-template-columns: 20% 70% 10%
+    background: $base-color
+    border-bottom: 5px solid $base-color-plus-opacity
     width: 40rem
-    height: 8rem
+    height: 6rem
+    &:hover
+        background: $base-color-plus
+        cursor: pointer
+        .div-svg
+            .svg-chev
+                stroke: #42b85f
+    .div-img-race
+        background: $base-color-plus-opacity
+
+    .div-name-race
+        display: flex
+        font-size: 1.5rem
+        align-items: flex-end
+        p
+            margin: 1rem
+
+    .div-svg
+        display: flex
+        justify-content: center
+        align-items: center
+            
+        .svg-chev
+            stroke: #1a692e
+            width: 42px
+            height: 42px
+
+    
 
 .right
     border-top-right-radius: 30%
