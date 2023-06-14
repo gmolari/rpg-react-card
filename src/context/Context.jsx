@@ -8,8 +8,17 @@ const Context = createContext()
 function UserProvider({children}){
     const location = useLocation()
     const navigate = useNavigate()
+    const [inputs, setInputs] = useState({});
 
     const {races, setChangeRaces, setWhichRaces} = useRaces()
+
+    function handleInput(e){
+        setInputs((prevValue) => ({
+            ...prevValue,
+            [e.target.name]: e.target.value 
+        }))
+        console.log(inputs)
+    }
 
     useEffect(() => {
         if (location.pathname ==  "/") navigate('/home')
@@ -29,7 +38,9 @@ function UserProvider({children}){
                 navigate,
                 races,
                 setWhichRaces,
-                setChangeRaces
+                setChangeRaces,
+                handleInput,
+                inputs
             }
         }>
             {children}
