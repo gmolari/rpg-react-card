@@ -9,10 +9,11 @@ export default function Characters(){
     const {races} = useContext(Context)
     const [count, setCount] = useState(0)
 
+
     const charRoutes = [
         <h1>Main</h1>,
         races?.results.map(i => (
-            <CardRace key={i.name} race={i.name} url={i.url}/>
+            <CardRace key={i.name} imgSrc={"src/assets/imgs/races/"+i.index+".jpeg"} race={i.name} url={i.url}/>
         )),
         <h1> Classes </h1>,
     ]
