@@ -1,20 +1,19 @@
 import { useContext, useEffect, useState } from 'react'
-import '../styles/characters.sass'
+import '../styles/characters/characters.sass'
 import { Context } from '../context/Context'
 import CardRace from '../components/CardRace'
 import { ButtonNext, ButtonPrev } from '../components/Buttons'
+import CardCharacter from '../components/CardCharacter'
 
 export default function Characters(){
     const {races, inputs, handleInput} = useContext(Context)
     const [count, setCount] = useState(0)
 
     const charRoutes = [
+        <div>
             <h2 className='h2-title'>Let's create a new Character!</h2>
             <div className="div-start-inputs">
-                <div className='div-img-character-register' >
-                    <label htmlFor="imgCharacterRegister"></label>
-                    <input type="file" name='inpImgCharacterRegister' id='imgCharacterRegister'/>
-                </div>
+                <CardCharacter />
                 <span className="centering">
                     <span className="box">
                         <div className="input__wrapper">

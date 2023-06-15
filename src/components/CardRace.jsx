@@ -1,5 +1,4 @@
-import "../styles/card-race.sass"
-import imagem from "../assets/imgs/races/dragonborn.jpeg"
+import "../styles/characters/card-race.sass"
 
 export default function CardRace({race, url, imgSrc}){
     

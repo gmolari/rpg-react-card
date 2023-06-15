@@ -1,0 +1,25 @@
+@import "../base-variables"
+    
+.div-img-character-register
+    background: $base-color-plus
+    padding: 1rem
+    label
+        background: $base-color
+        justify-content: center
+        align-items: center
+        display: flex
+        min-height: 20rem
+        max-height: 30rem
+        img
+            max-height: 20rem
+            &:hover
+            cursor: pointer
+            svg
+               stroke: $hover-color-line
+    input
+        display: none
+
+.uploadSvg
+    transition: .2s
+    stroke: #6e6e6e
+    width: 20%
