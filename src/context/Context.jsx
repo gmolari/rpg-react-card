@@ -17,7 +17,6 @@ function UserProvider({children}){
             ...prevValue,
             [e.target.name]: e.target.value 
         }))
-        console.log(inputs)
     }
 
     useEffect(() => {
@@ -40,7 +39,8 @@ function UserProvider({children}){
                 setWhichRaces,
                 setChangeRaces,
                 handleInput,
-                inputs
+                inputs,
+                setInputs
             }
         }>
             {children}

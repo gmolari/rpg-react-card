@@ -2,19 +2,26 @@ import { useContext, useState } from "react"
 import "../styles/characters/card-character.sass"
 import { Context } from "../context/Context"
 
-export default function CardCharacter(){
+export default function CardCharacterRegister(){
     const [image, setImage] = useState()
-    const {input} = useContext(Context)
+    const {inputs, setInputs} = useContext(Context)
 
     function handleImage(e) {
         const file = e.target.files[0]
         const reader = new FileReader()
 
-        reader.onload = () => console.log(reader.result)
+        reader.onload = () => {
+            setImage(reader.result)
+            setInputs((prevValue) => ({
+                ...prevValue,
+                imageChar: reader.result
+            }))
+        }
 
         if (file) {
             reader.readAsDataURL(file)
         }
+        console.log(inputs)
     }
 
     return (

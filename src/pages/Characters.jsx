@@ -3,56 +3,21 @@ import '../styles/characters/characters.sass'
 import { Context } from '../context/Context'
 import CardRace from '../components/CardRace'
 import { ButtonNext, ButtonPrev } from '../components/Buttons'
-import CardCharacter from '../components/CardCharacter'
+import CardCharacterRegister from '../components/CardCharacterRegister'
+import InputFields from '../components/InputsField'
 
 export default function Characters(){
-    const {races, inputs, handleInput} = useContext(Context)
+    const {races} = useContext(Context)
     const [count, setCount] = useState(0)
+
+    const arrayPlayer = [{placeholder: "Player's name", index: 'name_player'}, {placeholder: "Character's name", index: 'name_char'}]
 
     const charRoutes = [
         <div>
             <h2 className='h2-title'>Let's create a new Character!</h2>
             <div className="div-start-inputs">
-                <CardCharacter />
-                <span className="centering">
-                    <span className="box">
-                        <div className="input__wrapper">
-                            <input
-                                id="inpNamePlayerName"
-                                name='inpNamePlayerName'
-                                type="text"
-                                className="input__field"
-                                spellCheck="false"
-                                placeholder="Type your character's name"
-                                onChange={handleInput}
-                            />
-                            <label
-                                htmlFor="inpNamePlayerName"
-                                className="input__label"
-                            >
-                                Player's name
-                            </label>
-
-                        </div>
-                        <div className="input__wrapper">
-                            <input
-                                id="inpNameCharacterRegister"
-                                name='inpNameCharacterRegister'
-                                type="text"
-                                className="input__field"
-                                placeholder="Type your character's name"
-                                onChange={handleInput}
-                                spellCheck="false"
-                            />
-                            <label
-                                htmlFor="inpNameCharacterRegister"
-                                className="input__label"
-                            >
-                                Character's name
-                            </label>
-                        </div>
-                    </span>
-                </span>
+                <CardCharacterRegister />
+                <InputFields array={arrayPlayer} />
             </div>
         </div>,
 
