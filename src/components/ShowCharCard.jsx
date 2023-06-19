@@ -11,16 +11,33 @@ export default function ShowCharCard(){
                 <div className="img-char">
                     <img src={inputs.imageChar ? inputs.imageChar : ''} alt="Character's Image" />
                 </div>
-                <div className="name-race-class span-block">
-                    <span className="name">
-                        Character's name: {inputs.name_char ? inputs.name_char : ''}
-                    </span>
-                    <span className="race span-block">
-                        Chosen race: {inputs.name_race ? inputs.name_race : "None"}
-                    </span>
-                    <span className="char-class span-block">
-                        <span>Chosen class:</span> {inputs.name_class ? inputs.name_class : "None"}
-                    </span>
+                <div className="name-race-class">
+                    <div className="name div-span">
+                        <span className="desc">
+                            Character's name: 
+                        </span>
+                        <span>
+                            {inputs.name_char ? inputs.name_char : ''}
+                        </span>
+                    </div>
+                    <div className="race div-span">
+                        <span className="desc">
+                            Chosen race: 
+                        </span>
+                        <span>
+                            {
+                                inputs.name_race ? inputs.name_race : 'None'
+                            }
+                        </span>
+                    </div>
+                    <div className="char-class div-span">
+                        <span className="desc">
+                            Chosen class: 
+                        </span>
+                        <span>
+                            {inputs.name_class ? inputs.name_class : 'None'}
+                        </span>
+                    </div>
                 </div>
             </section>
         </aside>

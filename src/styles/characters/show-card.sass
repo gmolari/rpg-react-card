@@ -17,11 +17,22 @@
             img 
                 width: 90%
         .name-race-class
+            width: 100%
             display: flex
             flex-direction: column
             justify-content: space-around
-            .span-block
-                display: block
-            span
-                border-bottom: .3rem solid $base-color-plus
+            div
+                padding: 0 .5rem 0 0
+                display: flex
                 margin: .5rem
+                span
+                    padding: .3rem
+                    &:first-child
+                        background: $base-color-plus
+                    &:last-of-type
+                        padding: .3 .5rem 
+                        border-bottom: .3rem solid $base-color-plus
+                    
+                        
+
+                

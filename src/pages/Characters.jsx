@@ -8,7 +8,7 @@ import InputFields from '../components/InputsField'
 import ShowCharCard from '../components/ShowCharCard'
 
 export default function Characters(){
-    const {races} = useContext(Context)
+    const {content} = useContext(Context)
     const [count, setCount] = useState(0)
 
     const arrayPlayer = [
@@ -28,7 +28,7 @@ export default function Characters(){
         <div className="div-choose-races">
             <h2 className='h2-title'>Choose your Race</h2>
             {
-                races?.results.map(i => (
+                content?.results.map(i => (
                     <CardRace key={i.name} imgSrc={"src/assets/imgs/races/"+i.index+".jpeg"} race={i.name} url={i.index}/>
                 ))
             }
@@ -36,10 +36,6 @@ export default function Characters(){
 
         <h1> Classes </h1>,
     ]
-
-    useEffect(() => {
-        
-    }, [races])
 
     return (
         <section className='section-characters'>

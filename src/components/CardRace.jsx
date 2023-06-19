@@ -3,13 +3,14 @@ import "../styles/characters/card-race.sass"
 import { Context } from "../context/Context"
 
 export default function CardRace({race, url, imgSrc}){
-    const {setInputs} = useContext(Context)
+    const {setInputs, setWichRaces, setChangeRaces} = useContext(Context)
 
     function handleRace(){
         setInputs((prevValue) => ({
             ...prevValue,
             name_race: race
         }))
+        setChangeRaces(false)
     }
 
     return (
