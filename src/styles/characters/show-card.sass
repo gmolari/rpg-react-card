@@ -1,0 +1,27 @@
+@import "../base-variables"
+
+.aside-show-card
+    position: fixed
+    width: 30%
+    transform: translate(-60%, 20%)
+    border-bottom: .5rem solid $base-color-plus-opacity
+    .container
+        display: flex
+        .img-char
+            display: flex
+            justify-content: center
+            align-items: center
+            max-width: 40%
+            padding: .5rem
+            background: $base-color-plus-opacity
+            img 
+                width: 90%
+        .name-race-class
+            display: flex
+            flex-direction: column
+            justify-content: space-around
+            .span-block
+                display: block
+            span
+                border-bottom: .3rem solid $base-color-plus
+                margin: .5rem

@@ -3,20 +3,24 @@ import '../styles/characters/characters.sass'
 import { Context } from '../context/Context'
 import CardRace from '../components/CardRace'
 import { ButtonNext, ButtonPrev } from '../components/Buttons'
-import CardCharacterRegister from '../components/CardCharacterRegister'
+import ImageRegister from '../components/ImageRegister'
 import InputFields from '../components/InputsField'
+import ShowCharCard from '../components/ShowCharCard'
 
 export default function Characters(){
     const {races} = useContext(Context)
     const [count, setCount] = useState(0)
 
-    const arrayPlayer = [{placeholder: "Player's name", index: 'name_player'}, {placeholder: "Character's name", index: 'name_char'}]
+    const arrayPlayer = [
+        {placeholder: "Player's name", index: 'name_player'}, 
+        {placeholder: "Character's name", index: 'name_char'}
+    ]
 
     const charRoutes = [
         <div>
             <h2 className='h2-title'>Let's create a new Character!</h2>
             <div className="div-start-inputs">
-                <CardCharacterRegister />
+                <ImageRegister />
                 <InputFields array={arrayPlayer} />
             </div>
         </div>,
@@ -25,7 +29,7 @@ export default function Characters(){
             <h2 className='h2-title'>Choose your Race</h2>
             {
                 races?.results.map(i => (
-                    <CardRace key={i.name} imgSrc={"src/assets/imgs/races/"+i.index+".jpeg"} race={i.name} url={i.url}/>
+                    <CardRace key={i.name} imgSrc={"src/assets/imgs/races/"+i.index+".jpeg"} race={i.name} url={i.index}/>
                 ))
             }
         </div>,
@@ -40,6 +44,9 @@ export default function Characters(){
     return (
         <section className='section-characters'>
             <div className="div-container">
+                {
+                    count >= 1 && <ShowCharCard />
+                }
                 <div className="div-container-flex">
                     {charRoutes[count]}
                 </div>

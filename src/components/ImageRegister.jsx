@@ -2,9 +2,9 @@ import { useContext, useState } from "react"
 import "../styles/characters/card-character.sass"
 import { Context } from "../context/Context"
 
-export default function CardCharacterRegister(){
+export default function ImageRegister(){
     const [image, setImage] = useState()
-    const {inputs, setInputs} = useContext(Context)
+    const {setInputs} = useContext(Context)
 
     function handleImage(e) {
         const file = e.target.files[0]
@@ -21,7 +21,6 @@ export default function CardCharacterRegister(){
         if (file) {
             reader.readAsDataURL(file)
         }
-        console.log(inputs)
     }
 
     return (
